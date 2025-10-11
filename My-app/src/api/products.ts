@@ -1,0 +1,15 @@
+import type { Product } from "../types/product";
+
+const API = "https://fakestoreapi.com";
+
+export async function getProducts(): Promise<Product[]> {
+  const res = await fetch(`${API}/products`);
+  if (!res.ok) throw new Error("Faied to get data");
+  return res.json();
+}
+
+export async function getSingleProduct(id: string): Promise<Product[]> {
+  const res = await fetch(`${API}/products/${id}`);
+  if (!res.ok) throw new Error("Failed to find item");
+  return res.json();
+}
