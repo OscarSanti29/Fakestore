@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import type { Product } from "../types/product";
+import type { Product } from "../types/Types";
 import { getProducts } from "../api/products";
 
 export function useProducts() {

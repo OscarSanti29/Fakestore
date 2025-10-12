@@ -1,4 +1,4 @@
-import type { Product } from "../types/product";
+import type { Product } from "../types/Types";
 import { formatCurrency } from "../utils/formatcurrency";
 import { useNavigate } from "react-router-dom";
 
