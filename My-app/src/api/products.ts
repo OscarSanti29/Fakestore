@@ -13,3 +13,15 @@ export async function getSingleProduct(id: string): Promise<Product[]> {
   if (!res.ok) throw new Error("Failed to find item");
   return res.json();
 }
+
+export async function getCategory(): Promise<string[]> {
+  const res = await fetch(`${API}/products/categories`);
+  if (!res.ok) throw new Error(`Failed to get categories`);
+  return res.json();
+}
+
+export async function getProductsbyCategory(category: string) {
+  const res = await fetch(`${API}/products/category/${category}`);
+  if (!res.ok) throw new Error(`Failed to get products for ${category}`);
+  return res.json();
+}
