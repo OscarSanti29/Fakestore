@@ -8,10 +8,12 @@ export default function ProductInfo() {
 
   return (
     <div>
-      <h1>{product.title}</h1>
-      <img src={product.image} alt={product.title} />
-      <h2>{product.description}</h2>
-      <h1>{product.price}</h1>
+      <div>
+        <h1>{product.title}</h1>
+        <img src={product.image} alt={product.title} />
+        <h2>{product.description}</h2>
+        <h1>{product.price}</h1>
+      </div>
     </div>
   );
 }
