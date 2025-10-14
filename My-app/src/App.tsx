@@ -7,6 +7,7 @@ import { Profile } from "./pages/Account";
 import ProductInfo from "./pages/product-details";
 import { Navbar } from "./components/Navbar";
 import { useLocation } from "react-router-dom";
+import { UserCarts } from "./pages/Carts";
 
 function App() {
   const location = useLocation();
@@ -20,6 +21,7 @@ function App() {
         <Route path="/products" element={<Home />} />
         <Route path="/products/:id" element={<ProductInfo />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/carts/user/:id" element={<UserCarts />} />
       </Routes>
     </AuthProvider>
   );

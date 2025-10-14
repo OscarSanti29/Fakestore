@@ -1,3 +1,5 @@
+import type { JSX } from "react/jsx-runtime";
+
 export interface Product {
   id: number;
   title: string;
@@ -17,4 +19,17 @@ export interface User {
     lastname: string;
   };
   phone: string;
+}
+
+export interface CartProduct {
+  map(arg0: (product: any) => JSX.Element): import("react").ReactNode;
+  productId: number;
+  quantity: number;
+}
+
+export interface Cart {
+  id: number;
+  userId: number;
+  date: string;
+  products: CartProduct;
 }

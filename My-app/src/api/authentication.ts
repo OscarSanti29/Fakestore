@@ -1,4 +1,5 @@
 import type { User } from "../types/Types";
+import type { Cart } from "../types/Types";
 
 const API = "https://fakestoreapi.com";
 
@@ -50,4 +51,10 @@ export async function currentUser(id: string, token: string): Promise<User> {
     console.error("Error fetching current user:", error);
     throw error;
   }
+}
+
+export async function getCart(userId: number): Promise<Cart[]> {
+  const res = await fetch(`${API}/carts/user/${userId}`);
+  if (!res.ok) throw new Error("Failed to fetch carts");
+  return res.json();
 }

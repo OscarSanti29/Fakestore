@@ -10,6 +10,7 @@ export function Navbar() {
           <>
             <span> Hello, {auth.user.name.firstname}!</span>
             <button onClick={auth.logout}>Logout</button>
+            <Link to="/carts/user/:id">Cart</Link>
           </>
         ) : (
           <div>

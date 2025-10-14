@@ -9,6 +9,8 @@ interface AuthContextType {
   logout: () => void;
 }
 
+// Create and export the context
+// eslint-disable-next-line react-refresh/only-export-components
 export const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
@@ -23,12 +25,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setUser(JSON.parse(savedUser));
       setToken(savedToken);
     }
-  }, [user, token]);
+  }, []); // ✅ only run once
 
   const login = async (id: string, token: string) => {
     const data = await currentUser(id, token);
     setUser(data);
     setToken(token);
+    localStorage.setItem("user", JSON.stringify(data));
+    localStorage.setItem("token", token);
   };
 
   const logout = () => {
@@ -39,10 +43,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <>
-      <AuthContext.Provider value={{ user, token, login, logout }}>
-        {children}
-      </AuthContext.Provider>
-    </>
+    <AuthContext.Provider value={{ user, token, login, logout }}>
+      {children}
+    </AuthContext.Provider>
   );
 }
