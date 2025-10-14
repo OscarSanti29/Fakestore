@@ -48,38 +48,52 @@ export function Login() {
   };
 
   return (
-    <div className="flex justify-evenly">
+    <div className="flex justify-between ">
       {" "}
-      <div className="border">
-        {" "}
-        <div className="mt-6">
+      <div className=" w-1/2 bg-[#b6ffa5] h-dvh p-2 border-[#105800] border-r-4">
+        <h1 className="text-black text-3xl text-center font-bold">
+          User log ins
+        </h1>
+        <p className="text-black text-xl text-center font-semibold italic">
+          Since this a FakeApi and no real users can be made and stored within
+          the API. Here is a list of the hardcoded users of the UsersAPI from
+          the FakestoreAPI
+        </p>
+        <div className="flex flex-col items-center ">
           {users.map((u, index) => (
-            <div key={index}>
-              <button onClick={() => toggle(index)}>
-                Name:{u.name.firstname} {u.name.lastname}
+            <div
+              key={index}
+              className="border rounded-xl shadow-2xl bg-white text-center w-1/2 m-3"
+            >
+              <button
+                onClick={() => toggle(index)}
+                className=" text-2xl m-2 font-semibold"
+              >
+                Name: {u.name.firstname} {u.name.lastname}
                 {openindex === index ? (
-                  <i className="fa-solid fa-chevron-up"></i>
+                  <i className="fa-solid fa-chevron-up cursor-pointer"></i>
                 ) : (
-                  <i className="fa-solid fa-chevron-down"></i>
+                  <i className="fa-solid fa-chevron-down cursor-pointer"></i>
                 )}
               </button>
               {openindex === index && (
-                <p>
-                  Username:{u.username} Password: {u.password}
-                </p>
+                <div className="text-xl">
+                  <p>Username:{u.username}</p>
+                  <p>Password: {u.password}</p>
+                </div>
               )}
             </div>
           ))}
         </div>
       </div>
-      <div>
+      <div className="m-auto">
         <form
           onSubmit={handleLogin}
-          className="flex flex-col gap-3 bg-white p-6 rounded-xl shadow-md w-80"
+          className="flex flex-col gap-3 bg-white  p-6 rounded-xl shadow-md w-80"
         >
-          <h2 className="text-2xl font-semibold mb-4">Login</h2>
+          <h2 className="text-5xl font-bold ">Login</h2>
           <label className="flex flex-col">
-            <span className="text-sm mb-1">Username</span>
+            <span className="text-md font-semibold mb-1">Username</span>
             <input
               type="text"
               value={username}
@@ -89,7 +103,7 @@ export function Login() {
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-sm mb-1">Password</span>
+            <span className="text-md font-semibold mb-1">Password</span>
             <input
               type="password"
               value={password}
@@ -102,13 +116,13 @@ export function Login() {
           <button
             type="submit"
             disabled={loadingLogin}
-            className="bg-blue-500 text-white rounded-lg py-2 hover:bg-blue-600 transition"
+            className="bg-[#b6ffa5] rounded-lg py-2 shadow-xl hover:bg-[#105800] hover:text-white transition"
           >
             {loadingLogin ? "Logging in..." : "Login"}
           </button>{" "}
           <button
             onClick={handleGuest}
-            className="rounded-xl bg-orange-500 text-white p-2 mb-6 hover:bg-orange-600 transition"
+            className="bg-[#105800] text-white rounded-lg py-2 shadow-xl hover:bg-[#b6ffa5] hover:text-black transition"
           >
             Continue as guest
           </button>

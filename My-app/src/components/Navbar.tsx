@@ -5,16 +5,21 @@ export function Navbar() {
   const auth = useContext(AuthContext);
   return (
     <>
-      <div>
+      <div className="flex justify-between bg-[#105800] text-white">
         {auth?.user ? (
           <>
-            <span> Hello, {auth.user.name.firstname}!</span>
+            <span className="text-xl font-semibold">
+              {" "}
+              Hello, {auth.user.name.firstname}!
+            </span>
             <button onClick={auth.logout}>Logout</button>
             <Link to="/carts/user/:id">Cart</Link>
           </>
         ) : (
           <div>
-            <span>Please log in to access other features</span>
+            <span className="text-xl font-semibold">
+              Please log in to access other features
+            </span>
             <Link to="/"> Log in </Link>
           </div>
         )}
