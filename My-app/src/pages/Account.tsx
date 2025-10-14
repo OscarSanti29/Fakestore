@@ -10,22 +10,28 @@ export function Profile() {
   return (
     <>
       <div>
-        <div>
-          <h1>
+        <div className="flex flex-col text-3xl font-semibold items-center">
+          <h1 className="text-8xl m-10">
             Welcome, {name.firstname} {name.lastname}
           </h1>
-          <ul>
-            <li>
-              <strong> Username: {username}</strong>
-            </li>
-            <li>
-              <strong> Email {email}</strong>
-            </li>
-            <li>
-              <strong> Phone {phone}</strong>
-            </li>
-          </ul>
-          <button onClick={auth.logout}>Log Out</button>
+          <div className="w-64 h-64 rounded-full bg-[#105800] flex items-center justify-center">
+            <i className="fa-solid fa-user text-[#b6ffa5] text-9xl" />
+          </div>
+          <div>
+            {" "}
+            <ul className="text-5xl text-[#105800]">
+              <li className="m-5">Username: {username}</li>
+              <li className="m-5">Email {email}</li>
+              <li className="m-5">Phone {phone}</li>
+            </ul>
+          </div>
+
+          <button
+            onClick={auth.logout}
+            className="bg-[#b6ffa5] cursor-pointer rounded-lg p-2 font-semibold shadow-xl hover:bg-[#105800] hover:text-white transition"
+          >
+            Log Out
+          </button>
         </div>
       </div>
     </>
