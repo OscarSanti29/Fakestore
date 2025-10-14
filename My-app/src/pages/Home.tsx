@@ -43,7 +43,7 @@ export function Home() {
       <Categories onSelectCategory={handleCategorySelect} />
 
       {/* Products grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-5 place-items-center">
         {filteredProducts.length === 0 ? (
           <p className="col-span-full text-center">No products found.</p>
         ) : (

@@ -91,7 +91,7 @@ export function Login() {
           onSubmit={handleLogin}
           className="flex flex-col gap-3 bg-white  p-6 rounded-xl shadow-md w-80"
         >
-          <h2 className="text-5xl font-bold ">Login</h2>
+          <h2 className="text-5xl font-bold ">Log in</h2>
           <label className="flex flex-col">
             <span className="text-md font-semibold mb-1">Username</span>
             <input
@@ -116,13 +116,13 @@ export function Login() {
           <button
             type="submit"
             disabled={loadingLogin}
-            className="bg-[#b6ffa5] rounded-lg py-2 shadow-xl hover:bg-[#105800] hover:text-white transition"
+            className="bg-[#b6ffa5] rounded-lg py-2 font-semibold shadow-xl hover:bg-[#105800] hover:text-white transition"
           >
-            {loadingLogin ? "Logging in..." : "Login"}
+            {loadingLogin ? "Logging in..." : "Log in"}
           </button>{" "}
           <button
             onClick={handleGuest}
-            className="bg-[#105800] text-white rounded-lg py-2 shadow-xl hover:bg-[#b6ffa5] hover:text-black transition"
+            className="bg-[#105800] text-white font-semibold rounded-lg py-2 shadow-xl hover:bg-[#b6ffa5] hover:text-black transition"
           >
             Continue as guest
           </button>

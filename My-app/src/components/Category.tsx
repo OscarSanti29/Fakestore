@@ -41,13 +41,13 @@ export function Categories({ onSelectCategory }: CategoriesProps) {
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          className="flex items-center gap-2 border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
+          className="flex items-center gap-2 border-gray-300 bg-white text-[#105800] hover:bg-gray-50 m-3"
         >
           {selectedCategory}
           <ChevronDown size={16} />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-48 bg-white shadow-lg border rounded-lg">
+      <DropdownMenuContent className="w-48 bg-white shadow-lg border rounded-lg text-[#105800]">
         <DropdownMenuItem onClick={() => handleSelect("All Categories")}>
           All Categories
         </DropdownMenuItem>

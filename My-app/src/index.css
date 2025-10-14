@@ -3,3 +3,7 @@
 h3 {
     color: #105800;
 }
+
+.backface-hidden {
+    backface-visibility: hidden;
+}

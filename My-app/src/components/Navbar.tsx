@@ -5,27 +5,44 @@ export function Navbar() {
   const auth = useContext(AuthContext);
   return (
     <>
-      <div className="flex justify-between bg-[#105800] text-white">
+      <div className="flex bg-white justify-evenly shadow-xl text-[#105800] font-semibold p-2 mb-5">
         {auth?.user ? (
           <>
-            <span className="text-xl font-semibold">
+            <span className="text-2xl">
               {" "}
               Hello, {auth.user.name.firstname}!
             </span>
-            <button onClick={auth.logout}>Logout</button>
-            <Link to="/carts/user/:id">Cart</Link>
+            <button
+              onClick={auth.logout}
+              className="text-2xl font-bold cursor-pointer"
+            >
+              Logout
+            </button>
+            <Link to="/carts/user/:id" className="text-2xl font-bold">
+              Cart
+            </Link>
           </>
         ) : (
           <div>
-            <span className="text-xl font-semibold">
-              Please log in to access other features
+            <span className="text-2xl ">
+              Please{" "}
+              <Link
+                to="/"
+                className="font-bold italic p-1 rounded-lg hover:bg-[#105800] hover:text-white transition"
+              >
+                Log in
+              </Link>{" "}
+              to access other features
             </span>
-            <Link to="/"> Log in </Link>
           </div>
         )}
-        <Link to="/products">Home</Link>
+        <Link to="/products" className="text-2xl font-bold">
+          Home
+        </Link>
 
-        <Link to="/profile">Profile</Link>
+        <Link to="/profile" className="text-2xl font-bold">
+          Profile
+        </Link>
       </div>
     </>
   );
