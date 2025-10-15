@@ -26,7 +26,6 @@ export interface User {
 }
 
 export interface CartProduct {
-  map(arg0: (product: any) => JSX.Element): import("react").ReactNode;
   productId: number;
   quantity: number;
 }

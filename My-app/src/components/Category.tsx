@@ -37,30 +37,35 @@ export function Categories({ onSelectCategory }: CategoriesProps) {
   };
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button
-          variant="outline"
-          className="flex items-center gap-2 border-gray-300 bg-white text-[#105800] hover:bg-gray-50 m-3"
-        >
-          {selectedCategory}
-          <ChevronDown size={16} />
-        </Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-48 bg-white shadow-lg border rounded-lg text-[#105800]">
-        <DropdownMenuItem onClick={() => handleSelect("All Categories")}>
-          All Categories
-        </DropdownMenuItem>
-        {categories.map((category) => (
-          <DropdownMenuItem
-            key={category}
-            onClick={() => handleSelect(category)}
-            className="capitalize"
+    <div>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button
+            variant="outline"
+            className="flex items-center text-xl gap-2 border-gray-300 bg-white text-[#105800] hover:bg-gray-50"
           >
-            {category}
+            {selectedCategory}
+            <ChevronDown size={16} />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent className="w-60 bg-white shadow-lg border rounded-lg text-[#105800]">
+          <DropdownMenuItem
+            onClick={() => handleSelect("All Categories")}
+            className="text-xl font-semibold"
+          >
+            All Categories
           </DropdownMenuItem>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+          {categories.map((category) => (
+            <DropdownMenuItem
+              key={category}
+              onClick={() => handleSelect(category)}
+              className="capitalize text-xl font-semibold"
+            >
+              {category}
+            </DropdownMenuItem>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
   );
 }

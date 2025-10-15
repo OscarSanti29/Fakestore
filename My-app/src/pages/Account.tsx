@@ -11,7 +11,7 @@ export function Profile() {
     <>
       <div>
         <div className="flex flex-col text-3xl font-semibold items-center">
-          <h1 className="text-8xl m-10">
+          <h1 className="text-8xl m-10 capitalize">
             Welcome, {name.firstname} {name.lastname}
           </h1>
           <div className="w-64 h-64 rounded-full bg-[#105800] flex items-center justify-center">

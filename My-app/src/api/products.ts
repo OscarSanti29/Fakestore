@@ -8,7 +8,7 @@ export async function getProducts(): Promise<Product[]> {
   return res.json();
 }
 
-export async function getSingleProduct(id: string): Promise<Product[]> {
+export async function getSingleProduct(id: string): Promise<Product> {
   const res = await fetch(`${API}/products/${id}`);
   if (!res.ok) throw new Error("Failed to find item");
   return res.json();
