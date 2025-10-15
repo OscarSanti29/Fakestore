@@ -1,5 +1,3 @@
-import type { JSX } from "react/jsx-runtime";
-
 export interface Product {
   id: number;
   title: string;
@@ -26,6 +24,8 @@ export interface User {
 }
 
 export interface CartProduct {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  map(arg0: (p: any) => Promise<{ product: Product; quantity: any }>): any;
   productId: number;
   quantity: number;
 }

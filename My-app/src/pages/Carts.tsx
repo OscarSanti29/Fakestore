@@ -19,7 +19,7 @@ export function UserCarts() {
     async function loadCart() {
       setLoading(true);
       try {
-        const userCarts = await getCart(user.id);
+        const userCarts = await getCart(user!.id);
 
         const cartsWithDetails: CartWithProducts[] = await Promise.all(
           userCarts.map(async (cart) => {
