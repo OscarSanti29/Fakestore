@@ -13,3 +13,5 @@ A fake E-commerce website built using https://fakestoreapi.com/. Users can log i
 - View current logged in user's profile and carts
 - View product details
 
+# Live Demo
+https://newstorefake.netlify.app/ 
